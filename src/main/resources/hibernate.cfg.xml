@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <!-- -->
+    <session-factory>
+
+        <property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- Dirver adresini alıyor diyelim mysqle geçiceksin mysql diriver adrrsini yazıyosun otomatik yazıyo -->
+
+        <property name="connection.url">jdbc:postgresql://localhost:5432/courses_db</property>
+        <!--bu dbnin localhost numarasını ve dbnin ismini veriyoruz bu isimde bir db olmazsa hata verir-->
+
+        <property name="connection.username">dev_user</property>
+        <!--db kullanıcı-->
+
+        <property name="connection.password">dev_password</property>
+
+        <!-- The SQL types nott same for the all data bases, so that specific database will have specific dialect -->
+
+        <property name = "hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <!-- lehçem ne onu söylüyorum-->
+
+        <!-- ddl.auto create ise uygulama her çalıştırıldığında schema yeniden oluşturulur.
+             update: schema silinmez değişiklik var ise güncellenir.
+             create-drop: schemanızı uygulama çalıştırıldığında oluşturuyor, sonlandığında schema siliniyor.
+             create-create drop development kısmında kullanılır genelde
+             validate: schema'yı validate yapıyor.
+             none: yukarıdakilerin hiç birisini yapmıyor.
+            update'i create yaptık
+         -->
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <property name="show_sql">true</property>
+        <!-- çıktıda çalışan sql kodlarını görmek istersen-->
+
+        <property name="format_sql">true</property>
+        <!-- çıktıdaki sql sorguları daha anlaşılır hale getiriyot-->
+
+        <!-- casheleme konsundan sonra eklendi alttakiler-->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+        <!--ddAnnotatedClass yapsıını kullanmadan aşağıdaki gibi de entity classlarımı ekleyebilirim
+        <mapping class="com.hb05.manytoone.Student05"/>
+        <mapping class="com.hb05.manytoone.University"/>
+
+-->
+
+    </session-factory>
+
+</hibernate-configuration>
