@@ -13,15 +13,6 @@ public class Student09 {
     private String name;
 
     private int grade;
-/*
-
-Hibernate defaultta ilişkileri eager mı lazy mı olucak ayarlıyor
-    OneToMany       --> LAZY
-    ManyToMany      --> LAZY
-    OneToOne        --> EAGER
-    ManyToOne       --> EAGER
-
- */
 
 
 
@@ -29,8 +20,6 @@ Hibernate defaultta ilişkileri eager mı lazy mı olucak ayarlıyor
 
 
     private List<Book09> bookList = new ArrayList<>();
-
-    // Getter - Setter
 
 
     public int getId() {
@@ -65,7 +54,6 @@ Hibernate defaultta ilişkileri eager mı lazy mı olucak ayarlıyor
         this.bookList = bookList;
     }
 
-    // toString()
 
     @Override
     public String toString() {

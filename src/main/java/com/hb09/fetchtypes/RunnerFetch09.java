@@ -16,11 +16,7 @@ public class RunnerFetch09 {
 
         // get methodu sonra delete methodunu kullanalım ;
         Student09 student = session.get(Student09.class,1002); // Book3 - Book4
-        //session.delete(student);
 
-//        Book09 book1 = session.get(Book09.class,101);
-//        System.out.println(book1);
-//        session.delete(book1);
 
         for (Book09 book : student.getBookList()) {
             System.out.println(book);

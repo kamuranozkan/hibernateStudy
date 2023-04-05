@@ -14,7 +14,6 @@ public class Book09 {
     @JoinColumn
     private Student09 student ;
 
-    // Getter - Setter
 
 
     public int getId() {
@@ -41,7 +40,6 @@ public class Book09 {
         this.student = student;
     }
 
-    // toString()
 
     @Override
     public String toString() {

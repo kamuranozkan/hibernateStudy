@@ -1,4 +1,4 @@
-package hb10.idgeneration;
+package com.hb10.idgeneration;
 
 public class RunnerSave10 {
 }
